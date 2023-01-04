@@ -1,14 +1,22 @@
 plugins {
-    id("org.jetbrains.kotlin.multiplatform")
     id("com.android.library")
+    id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.multiplatform")
 }
 
 kotlin {
     android()
 
     sourceSets {
-        val commonMain by getting
-        val androidMain by getting
+        getByName("commonMain") {
+            dependencies {
+                api(compose.animation)
+                api(compose.foundation)
+                api(compose.material)
+                api(compose.runtime)
+                api(compose.ui)
+            }
+        }
     }
 }
 
