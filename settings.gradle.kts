@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Compose_IR_Bug"
+rootProject.name = "compose-ir-bug"
 include(":androidApp")
 include(":shared")
